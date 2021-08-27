@@ -25,7 +25,7 @@ RUN { \
 
 ENV TZ Asia/Shanghai
 
-ENV LC_ALL zh_CN.UTF-8
+ENV LANG C.UTF-8
 
 EXPOSE 22
 
