@@ -20,6 +20,8 @@ RUN { \
     echo 'mkdir -p /root/.ssh'; \
     echo "echo 'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAttCOKBNadAC5s4yE5JRIZ24UvZaB6K4mlU+txxAfmfyepuPlJw0Da6YX6iMUqj5iIsaYrCMUjszAsbNomnxfYKwVbFpnVZtMJVLeu1VLhCklYM4Btu0Q+5NalUQzmvmUx3Cc3Cr/BXmTzXVWDeyBGhdFkrMCdspS/xd9SU9wcpcOGxb8bRk3EWQS95ejdEL2S0F3t9E2PWEXrtk3JfWjR3IsY1hSJAAsHAd2/sQasAYktmJhZp2l+/E2NoSvrNrgTMZm5senQYhvAH4jn43ScxWqWbT2SLeGhQ/q0YEouscKoJLLEdijPx+yphh4TU8TDMZe+9oj9XMjAz8EHZqjWQ=='>/root/.ssh/authorized_keys"; \
     echo 'exec "$@"'; \
+    echo "export LC_ALL='C.UTF-8'" >> /etc/bash.bashrc; \
+    source /etc/bash.bashrc; \
     } > /usr/local/bin/entry_point.sh; \
     chmod +x /usr/local/bin/entry_point.sh;
 
