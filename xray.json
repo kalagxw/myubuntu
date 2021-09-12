@@ -1,31 +1,87 @@
 {
     "log": {
-        "loglevel": "warning"
+        "loglevel": "debug"
     },
     "inbounds": [
         {
-            "listen": "0.0.0.0",
-            "port": 6666,
+            "port": 2096,
             "protocol": "vless",
             "settings": {
                 "clients": [
                     {
                         "id": "5ed1ad68-6337-4fdb-a34b-f57e0b96ddbc",
+                        "flow": "xtls-rprx-direct",
                         "level": 0,
-                        "email": "pt@mt.cc"
+                        "email": "vless@go.com"
                     }
                 ],
-                "decryption": "none"
+                "decryption": "none",
+                "fallbacks": [
+                    {
+                        "dest": 1310,
+                        "xver": 1
+                    }
+                ]
             },
             "streamSettings": {
-                "network": "tcp"
+                "network": "tcp",
+                "security": "xtls",
+                "xtlsSettings": {
+                    "rejectUnknownSni": false,
+                    "alpn": [
+                        "http/1.1"
+                    ],
+                    "certificates": [
+                        {
+                            "keyFile": "/root/.acme.sh/tls13.pp.ua_ecc/tls13.pp.ua.key",
+                            "certificateFile": "/root/.acme.sh/tls13.pp.ua_ecc/fullchain.cer"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "port": 1310,
+            "listen": "127.0.0.1",
+            "protocol": "trojan",
+            "settings": {
+                "clients": [
+                    {
+                        "password": "94nibaBa",
+                        "level": 0,
+                        "email": "trojan@go.com"
+                    }
+                ],
+                "fallbacks": [
+                    {
+                        "dest": 443
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "none",
+                "tcpSettings": {
+                    "acceptProxyProtocol": true
+                }
             }
         }
     ],
     "outbounds": [
         {
-            "protocol": "freedom",
-            "tag": "direct"
+            "protocol": "socks",
+            "settings": {
+                "servers": [
+                    {
+                        "address": "127.0.0.1",
+                        "port": 8888
+                    }
+                ]
+            },
+            "tag": "warp-proxy"
+        },
+        {
+            "protocol": "freedom"
         }
     ]
 }
