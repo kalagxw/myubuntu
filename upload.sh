@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #
+#
 # Copyright (c) 2018-2020 P3TERX <https://p3terx.com>
 #
 # This is free software, licensed under the MIT License.
