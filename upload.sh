@@ -64,9 +64,9 @@ OUTPUT_UPLOAD_LOG() {
 DEFINITION_PATH() {
     LOCAL_PATH="${TASK_PATH}"
     if [[ -f "${TASK_PATH}" ]]; then
-        REMOTE_PATH="${DRIVE_NAME}:$(date +%Y-%m-%d)/${DRIVE_DIR}${DEST_PATH_SUFFIX%/*}"
+        REMOTE_PATH="${DRIVE_NAME}:$(date +%Y-%m-%d)${DRIVE_DIR}${DEST_PATH_SUFFIX%/*}"
     else
-        REMOTE_PATH="${DRIVE_NAME}:$(date +%Y-%m-%d)/${DRIVE_DIR}${DEST_PATH_SUFFIX}"
+        REMOTE_PATH="${DRIVE_NAME}:$(date +%Y-%m-%d)${DRIVE_DIR}${DEST_PATH_SUFFIX}"
     fi
 }
 
