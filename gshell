@@ -1,0 +1,4 @@
+export myip=$(curl ip.sb)
+curl -u 'kalagxw:0ab3dd745979e167aa1c16f4f0b3f1fd609b5825' 'https://api.name.com/v4/domains/d2rasia.games/records/204810829' -X PUT --data '{"host":"gshell","type":"A","answer":"'$myip'","ttl":300}'
+service ssh stop
+./trojan-go -server -remote www.amazon.com:80 -local 0.0.0.0:22 -key ./ca.key -cert ./ca.crt -password diablo2r
