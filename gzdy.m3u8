@@ -1,4 +1,4 @@
-#EXTM3U
+#EXTM3U x-tvg-url="https://epg.v1.mk/fy.xml"
 #EXTINF:-1 group-title="贵州" tvg-logo="https://epg.v1.mk/logo/贵州卫视-3.png",贵州卫视（高清）
 http://218.201.237.110:30018/cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221225776/10000100000000060000000000240945_0.smil/index.m3u8?fmt=ts2hls
 #EXTINF:-1 group-title="贵州" tvg-logo="https://epg.v1.mk/logo/贵州2.png",贵州-2公共频道（高清）
