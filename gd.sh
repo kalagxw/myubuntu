@@ -5,4 +5,6 @@ cd /root/.aria2c/ && rm upload.sh aria2.conf script.conf \
 && wget https://raw.githubusercontent.com/kalagxw/myubuntu/main/script.conf \
 && wget https://raw.githubusercontent.com/kalagxw/myubuntu/main/upload.sh && chmod a+x upload.sh \
 && wget https://raw.githubusercontent.com/kalagxw/myubuntu/main/aria2.conf && cd ~ \
-&& mkdir -p ~/.config/rclone && cd ~/.config/rclone && wget https://github.com/kalagxw/myubuntu/raw/main/rcl.zip && unzip *.zip && rm *.zip && cd ~
+&& mkdir -p ~/.config/rclone && cd ~/.config/rclone && wget https://github.com/kalagxw/myubuntu/raw/main/rcl.zip && unzip *.zip && rm *.zip && cd ~ \
+&& /etc/init.d/aria2 stop \
+&& /etc/init.d/aria2 stop
